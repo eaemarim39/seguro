@@ -1,146 +1,236 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cibersegurança - Caique Marim</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Cibersegurança e Principais Ameaças</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(45deg, #1e1e1e, #111);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #f39c12;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #f39c12;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+        }
+        .section {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section h2 {
+            font-size: 2em;
+            color: #f39c12;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin: 10px 0;
+        }
+        .cta-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .animated-section {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background: #222;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close-btn {
+            background-color: #f39c12;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .close-btn:hover {
+            background-color: #e67e22;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Cibersegurança</h1>
-        <nav>
-            <ul>
-                <li><a href="#" data-section="threats">Ameaças</a></li>
-                <li><a href="#" data-section="vulnerabilities">Vulnerabilidades</a></li>
-                <li><a href="#" data-section="protection">Formas de Proteção</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="content-container">
-            <section id="threats" class="content-section">
-                <h2>Ameaças</h2>
-                <p>As ameaças são perigos que podem comprometer a confidencialidade, integridade e disponibilidade. Aqui estão algumas das mais comuns:</p>
-                <div class="card">
-                    <h3>Phishing</h3>
-                    <p>Phishing é uma técnica de ataque que utiliza engenharia social para enganar usuários e obter informações sensíveis, como senhas e dados financeiros.</p>
-                </div>
-                <div class="card">
-                    <h3>Engenharia Social</h3>
-                    <p>Manipular indivíduos para obter informações confidenciais por meio de engano.</p>
-                </div>
-                <div class="card">
-                    <h3>Malware</h3>
-                    <p>Software malicioso projetado para causar danos ou obter acesso não autorizado a sistemas.</p>
-                </div>
-                <div class="card">
-                    <h3>Ransomware</h3>
-                    <p>Malware que criptografa arquivos e exige um resgate para desbloqueá-los.</p>
-                </div>
-                <div class="card">
-                    <h3>DDoS</h3>
-                    <p>Ataque que sobrecarrega um sistema com tráfego excessivo.</p>
-                </div>
-                <div class="card">
-                    <h3>SQL Injection</h3>
-                    <p>Técnica de ataque onde comandos SQL maliciosos são inseridos em campos de entrada.</p>
-                </div>
-                <div class="card">
-                    <h3>XSS</h3>
-                    <p>Cross-Site Scripting é uma vulnerabilidade que permite injetar scripts maliciosos.</p>
-                </div>
-                <div class="card">
-                    <h3>CSRF</h3>
-                    <p>Cross-Site Request Forgery força um usuário autenticado a executar ações indesejadas.</p>
-                </div>
-                <div class="card">
-                    <h3>Man-in-the-Middle</h3>
-                    <p>Interceptação e possível modificação da comunicação entre duas partes.</p>
-                </div>
-                <div class="card">
-                    <h3>Buffer Overflow</h3>
-                    <p>Quando mais dados são gravados em um buffer do que ele pode suportar.</p>
-                </div>
-                <div class="card">
-                    <h3>Brute Force</h3>
-                    <p>Tenta todas as combinações possíveis de senha até encontrar a correta.</p>
-                </div>
-                <div class="card">
-                    <h3>Credential Stuffing</h3>
-                    <p>Uso de informações de login vazadas para acessar outras contas.</p>
-                </div>
-                <div class="card">
-                    <h3>Zero-Day</h3>
-                    <p>Vulnerabilidade desconhecida pelo fabricante ou público.</p>
-                </div>
-                <div class="card">
-                    <h3>Spear Phishing</h3>
-                    <p>Phishing personalizado para um indivíduo ou organização específica.</p>
-                </div>
-                <div class="card">
-                    <h3>Ameaça Interna</h3>
-                    <p>Indivíduos dentro da organização que abusam de seu acesso.</p>
-                </div>
-                <div class="card">
-            
 
-                </div>
-            </section>
-            <section id="vulnerabilities" class="content-section">
-                <h2>Vulnerabilidades</h2>
-                <p>As vulnerabilidades são falhas em sistemas ou software que podem ser exploradas por atacantes para obter acesso não autorizado ou causar danos. Aqui estão algumas das mais comuns:</p>
-                <div class="card">
-                    <h3>Injeção de Código</h3>
-                    <p>Falha onde dados não confiáveis são executados como código.</p>
-                </div>
-                <div class="card">
-                    <h3>Validação de Entrada</h3>
-                    <p>Quando a entrada do usuário não é corretamente validada, permitindo ataques.</p>
-                </div>
-                <div class="card">
-                    <h3>Exposição de Dados Sensíveis</h3>
-                    <p>Quando dados sensíveis são expostos de forma inadequada.</p>
-                </div>
-                <div class="card">
-                    <h3>Configuração Incorreta</h3>
-                    <p>Configurações inadequadas que podem ser exploradas por atacantes.</p>
-                </div>
-                <div class="card">
-                    <h3>Autenticação Fraca</h3>
-                    <p>Falhas na autenticação que permitem acesso não autorizado.</p>
-                </div>
-            </section>
-            <section id="protection" class="content-section">
-                <h2>Formas de Proteção</h2>
-                <p>Proteger-se contra ataques e vulnerabilidades exige uma combinação de práticas e ferramentas. Aqui estão algumas formas eficazes de proteção:</p>
-                <div class="card">
-                    <h3>Educação e Conscientização</h3>
-                    <p>Treinamento de funcionários e usuários para reconhecer e evitar ataques.</p>
-                </div>
-                <div class="card">
-                    <h3>Atualizações Regulares</h3>
-                    <p>Manter software e sistemas atualizados para corrigir vulnerabilidades conhecidas.</p>
-                </div>
-                <div class="card">
-                    <h3>Uso de Senhas Fortes</h3>
-                    <p>Implementar políticas de senha forte e autenticação multifatorial.</p>
-                </div>
-                <div class="card">
-                    <h3>Monitoramento e Resposta</h3>
-                    <p>Monitorar sistemas em busca de atividades suspeitas e ter planos de resposta a incidentes.</p>
-                </div>
-                <div class="card">
-                    <h3>Backup Regular</h3>
-                    <p>Realizar backups regulares para garantir que dados possam ser recuperados em caso de ataque.</p>
-                </div> 
-            </section>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Caique Marim</p>
-    </footer>
-    <script src="app.js"></script>
+<header>
+    <h1>Segurança Cibernética</h1>
+    <p>Proteja seus dados, proteja seu futuro.</p>
+</header>
+
+<div class="navbar">
+    <a href="#ameaças">Ameaças</a>
+    <a href="#proteção">Proteção</a>
+    <a href="#faq">FAQ</a>
+</div>
+
+<div class="main-content">
+    <div class="section animated-section" id="ameaças">
+        <h2>Principais Ameaças Cibernéticas</h2>
+        <ul>
+            <li><strong>Phishing:</strong> Tentativas fraudulentas de obter informações sensíveis através de e-mails e sites falsos.</li>
+            <li><strong>Malware:</strong> Software malicioso projetado para danificar ou acessar sistemas sem permissão.</li>
+            <li><strong>Ransomware:</strong> Um tipo de malware que exige pagamento para liberar dados ou sistemas sequestrados.</li>
+            <li><strong>Vulnerabilidades de Software:</strong> Exploração de falhas em programas para ganhar acesso a sistemas protegidos.</li>
+            <li><strong>Ataques DDoS:</strong> Ataques de negação de serviço que sobrecarregam um sistema ou site.</li>
+            <li><strong>Spyware:</strong> Software que espiona atividades do usuário sem seu consentimento.</li>
+            <li><strong>Keylogger:</strong> Programas que registram as teclas pressionadas pelo usuário para roubo de dados.</li>
+            <li><strong>Cross-Site Scripting (XSS):</strong> Ataques que injetam scripts maliciosos em sites confiáveis.</li>
+            <li><strong>SQL Injection:</strong> Exploração de vulnerabilidades em bancos de dados para executar comandos SQL maliciosos.</li>
+            <li><strong>Man-in-the-Middle (MITM):</strong> Interceptação e alteração da comunicação entre duas partes.</li>
+            <li><strong>Credential Stuffing:</strong> Uso de credenciais vazadas para acessar diversas contas de usuário.</li>
+            <li><strong>Brute Force:</strong> Tentativas de adivinhar senhas através de força bruta.</li>
+            <li><strong>Zero-Day Exploit:</strong> Exploração de vulnerabilidades desconhecidas no software.</li>
+            <li><strong>Drive-by Download:</strong> Downloads automáticos de malware quando um usuário visita um site comprometido.</li>
+            <li><strong>Botnets:</strong> Redes de computadores infectados que executam comandos maliciosos sem o conhecimento dos usuários.</li>
+            <li><strong>Social Engineering:</strong> Manipulação psicológica de indivíduos para que revelem informações sensíveis.</li>
+            <li><strong>Scareware:</strong> Malware que engana o usuário, fazendo-o acreditar que seu computador está infectado e, em seguida, induzindo-o a comprar software falso.</li>
+            <li><strong>DNS Spoofing:</strong> Manipulação de respostas DNS para redirecionar o tráfego para sites maliciosos.</li>
+            <li><strong>Worms:</strong> Programas autônomos que se propagam pela rede, infectando sistemas e causando danos.</li>
+            <li><strong>Adware:</strong> Programas que exibem anúncios indesejados em seu computador.</li>
+            <li><strong>Rogue Software:</strong> Software falso que se apresenta como legítimo para enganar o usuário.</li>
+            <li><strong>Fake Apps:</strong> Aplicativos maliciosos que imitam programas legítimos para roubar dados.</li>
+            <li><strong>Fileless Malware:</strong> Malware que opera diretamente na memória, sem deixar vestígios em arquivos.</li>
+            <li><strong>Clickjacking:</strong> Técnicas que enganam o usuário a clicar em algo diferente do que ele vê.</li>
+            <li><strong>Remote Access Trojans (RATs):</strong> Trojans que permitem o controle remoto de um computador.</li>
+            <li><strong>Mobile Malware:</strong> Malware projetado especificamente para dispositivos móveis.</li>
+            <li><strong>Exploit Kits:</strong> Ferramentas que automatizam a exploração de vulnerabilidades.</li>
+            <li><strong>Cryptojacking:</strong> Uso não autorizado de computadores para minerar criptomoedas.</li>
+            <li><strong>WIFI Hacking:</strong> Exploração de vulnerabilidades em redes Wi-Fi para obter acesso não autorizado.</li>
+            <li><strong>Fake News e Desinformação:</strong> Distribuição de informações falsas para manipular opiniões e causar pânico.</li>
+            <li><strong>IoT Vulnerabilities:</strong> Vulnerabilidades em dispositivos conectados à Internet das Coisas.</li>
+            <li><strong>Vishing:</strong> Phishing por telefone, onde criminosos tentam obter informações sensíveis através de ligações fraudulentas.</li>
+            <li><strong>Fake Tech Support:</strong> Fraudes onde golpistas se passam por técnicos para obter acesso ao dispositivo da vítima.</li>
+            <li><strong>Exploração de API:</strong> Uso indevido de APIs para roubar dados ou realizar ataques.</li>
+            <li><strong>Bluetooth Hacking:</strong> Exploração de falhas no Bluetooth para acessar dispositivos próximos.</li>
+            <li><strong>Firmware Exploits:</strong> Exploração de falhas em firmware para comprometer hardware.</li>
+            <li><strong>Credential Harvesting:</strong> Coleta de credenciais de login de sites e serviços.</li>
+            <li><strong>ATM Skimming:</strong> Roubo de dados bancários a partir de dispositivos de caixas eletrônicos comprometidos.</li>
+            <li><strong>Fake Social Media Profiles:</strong> Perfis falsos usados para coletar informações pessoais e enganar usuários.</li>
+            <li><strong>Data Breaches:</strong> Vazamento de dados pessoais através de falhas em sistemas de segurança.</li>
+        </ul>
+    </div>
+
+    <div class="section animated-section" id="proteção">
+        <h2>Como se Proteger</h2>
+        <ul>
+            <li><strong>Use senhas fortes e únicas:</strong> Utilize uma combinação de letras, números e caracteres especiais.</li>
+            <li><strong>Atualize seu software regularmente:</strong> Mantenha seu sistema operacional e aplicativos sempre atualizados.</li>
+            <li><strong>Use antivírus confiáveis:</strong> Proteja seu dispositivo contra malware com programas antivírus reconhecidos.</li>
+            <li><strong>Evite clicar em links suspeitos:</strong> Não abra e-mails ou clique em links desconhecidos.</li>
+            <li><strong>Ative a autenticação de dois fatores:</strong> Adicione uma camada extra de segurança às suas contas online.</li>
+            <li><strong>Faça backups regulares:</strong> Proteja seus dados importantes realizando backups periódicos.</li>
+            <li><strong>Desconfie de ofertas muito boas para ser verdade:</strong> Evite cair em golpes de produtos ou serviços com descontos excessivos.</li>
+            <li><strong>Use redes Wi-Fi seguras:</strong> Evite usar Wi-Fi público para acessar dados sensíveis.</li>
+            <li><strong>Criptografe seus dispositivos:</strong> Proteja suas informações usando criptografia nos seus dispositivos móveis e computador.</li>
+            <li><strong>Use firewalls:</strong> Proteja sua rede com um firewall ativo.</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <button class="cta-button" onclick="showPopup()">Saiba mais sobre como se proteger</button>
+    </div>
+
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>Proteção Avançada</h2>
+        <p>Saiba mais sobre como melhorar a sua segurança cibernética e se proteger de ameaças online.</p>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Cibersegurança. Todos os direitos reservados.</p>
+</div>
+
+<script>
+    function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
 </body>
 </html>
-
